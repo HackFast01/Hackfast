@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Become an Ethical Hacker in 7 Days. Learn ethical hacking skills with our fast-track course in Nepal for only 1000 NPR." name="description"/>
+<meta content="Ethical Hacking Course Nepal, Learn Hacking in 7 Days, WhatsApp Course, Cybersecurity, Hacking Training" name="keywords"/>
+<title>HackFast Academy | Ethical Hacking in 7 Days</title>
+<style>
+        /* Basic styling */
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        :root {
+            --primary-color: #00FF00;
+            --dark-color: #000000;
+            --text-color: #E0E0E0;
+            --warning-color: #FF0044;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: #000;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Matrix Background */
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px; /* Adjusted for fixed nav */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+            animation: glitch 2s infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .price-display {
+            font-size: 2rem;
+            margin: 30px 0;
+            padding: 15px;
+            border: 2px solid var(--primary-color);
+            display: inline-block;
+            background: rgba(0, 255, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #00CC00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.4);
+        }
+
+        /* Course Info Section */
+        #course-info {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .course-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+        .course-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .course-card ul {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+
+        .course-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .course-card ul li:before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .day-item {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .day-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        #testimonials {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .testimonial .author {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Pricing */
+        #pricing {
+            text-align: center;
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--primary-color);
+            padding: 40px 30px;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            color: var(--primary-color);
+        }
+
+        .pricing-features {
+            list-style-type: none;
+            margin: 30px 0;
+            text-align: left;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Gateway Modal */
+        .modal {
+            /* display: none; /* Initially hidden, controlled by JS */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto; /* For scrollable modal content if needed */
+            display: flex; /* Used to center modal content */
+            align-items: center; /* Used to center modal content */
+            justify-content: center; /* Used to center modal content */
+        }
+
+        .modal-content {
+            background-color: #000;
+            /* margin: 10vh auto; Removed for flex centering */
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            position: relative; /* For positioning the close button */
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--text-color);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+        }
+
+        .input-field:focus {
+            outline: none;
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .footer-content {
+            padding: 15px;
+            border: 1px solid var(--primary-color);
+            display: inline-block;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.7), -0.05em -0.025em 0 rgba(0, 255, 0, 0.7);
+            }
+            25% {
+                text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.7), 0.025em 0.025em 0 rgba(0, 255, 0, 0.7);
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.7), 0.05em 0 0 rgba(0, 255, 0, 0.7);
+            }
+            75% {
+                text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.7), -0.025em -0.025em 0 rgba(0, 255, 0, 0.7);
+            }
+            100% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.7), -0.05em -0.025em 0 rgba(0, 255, 0, 0.7);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Match nav height */
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 20px 0;
+                border-bottom: 1px solid var(--primary-color);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 20px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .price-display {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    
+.scroll-down-indicator {
+  margin-top: 40px;
+  animation: bounce 1.5s infinite;
+  text-align: center;
+}
+.scroll-down-indicator .arrow {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 8px #00FF00;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+</style>
+<!-- Hacker Style Enhancements -->
+<style>
+  body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, p, a {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  canvas#matrixCanvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+</style>
+</head>
+<body>
+<canvas id="matrix-bg"></canvas>
+<nav>
+<div class="nav-container container scroll-reveal">
+<a class="logo" href="#">HackFast</a>
+<div class="menu-btn scroll-reveal" id="menuBtn">☰</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#hero">Home</a></li>
+<li><a href="#course-info">Course</a></li>
+<li><a href="#testimonials">Reviews</a></li>
+<li><a href="#pricing">Pricing</a></li>
+</ul>
+</div>
+</nav>
+<section class="scroll-reveal" id="hero">
+<div class="container scroll-reveal">
+<div class="hero-content scroll-reveal">
+<h1 class="hero-title scroll-reveal">Become an <span class="highlight">Ethical Hacker</span> in 7 Days</h1>
+<p class="hero-subtitle scroll-reveal"><span id="typed"></span></p>
+<div class="price-display scroll-reveal">🛡️ Only <span class="highlight">1000 NPR</span></div>
+<a class="btn" href="whatsapp://send?phone=+9779847699795&amp;text=Hi%2C%20I%20want%20to%20join%20the%20Ethical%20Hacking%20Course%20for%201000%20NPR.%20Please%20send%20me%20the%20details.">
+                    🛡️ Buy Now – 1000 NPR
+                </a>
+</div>
+</div>
+<div class="scroll-down-indicator">
+  <span class="arrow">▼</span>
+</div>
+
+</section>
+<section class="scroll-reveal" id="course-info">
+<div class="container scroll-reveal">
+<h2 class="section-title scroll-reveal">What You'll Learn</h2>
+<div class="course-grid scroll-reveal">
+<div class="course-card scroll-reveal">
+<h3 class="scroll-reveal">Wi-Fi &amp; Network Hacking</h3>
+<ul>
+<li>Wi-Fi password cracking</li>
+<li>Network scanning techniques</li>
+<li>Traffic analysis tools</li>
+<li>Man-in-the-middle attacks</li>
+</ul>
+</div>
+<div class="course-card scroll-reveal">
+<h3 class="scroll-reveal">Website Hacking</h3>
+<ul>
+<li>SQL injection methods</li>
+<li>Cross-site scripting (XSS)</li>
+<li>Password bypassing</li>
+<li>Web vulnerability scanning</li>
+</ul>
+</div>
+<div class="course-card scroll-reveal">
+<h3 class="scroll-reveal">System Exploitation</h3>
+<ul>
+<li>Password cracking</li>
+<li>Keylogging techniques</li>
+<li>Backdoor creation</li>
+<li>Social engineering tactics</li>
+</ul>
+</div>
+</div>
+<h2 class="section-title scroll-reveal">7-Day Fast-Track Plan</h2>
+<div class="timeline scroll-reveal">
+<div class="day-item scroll-reveal">
+<h3 class="scroll-reveal">Day 1: Fundamentals &amp; Setup</h3>
+<p class="scroll-reveal">Setting up your hacking lab and learning basic reconnaissance techniques.</p>
+</div>
+<div class="day-item scroll-reveal">
+<h3 class="scroll-reveal">Day 2-3: Network &amp; Wi-Fi Hacking</h3>
+<p class="scroll-reveal">Wi-Fi security assessment, network scanning, and traffic analysis methods.</p>
+</div>
+<div class="day-item scroll-reveal">
+<h3 class="scroll-reveal">Day 4-5: Website Vulnerabilities</h3>
+<p class="scroll-reveal">Finding and exploiting common web application weaknesses.</p>
+</div>
+<div class="day-item scroll-reveal">
+<h3 class="scroll-reveal">Day 6-7: Advanced Techniques &amp; Practice</h3>
+<p class="scroll-reveal">System hacking, real-world scenarios, and defense strategies.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-reveal" id="testimonials">
+<div class="container scroll-reveal">
+<h2 class="section-title scroll-reveal">What Our Students Say</h2>
+<div class="testimonial-grid scroll-reveal">
+<div class="testimonial scroll-reveal">
+<p class="scroll-reveal">"Completed the course in 6 days. The Wi-Fi hacking module was incredibly practical. Highly recommend!"</p>
+<div class="author scroll-reveal">@NeoHacker23</div>
+</div>
+<div class="testimonial scroll-reveal">
+<p class="scroll-reveal">"This is next-level training with real-world applications, not just theory. Worth every rupee."</p>
+<div class="author scroll-reveal">@GhostRoot</div>
+</div>
+<div class="testimonial scroll-reveal">
+<p class="scroll-reveal">"Best investment I've made. Legit knowledge that I'm using to secure my company's systems now."</p>
+<div class="author scroll-reveal">@ByteSniper</div>
+</div>
+</div>
+</div>
+</section>
+<section class="scroll-reveal" id="pricing">
+<div class="container scroll-reveal">
+<h2 class="section-title scroll-reveal">Course Investment</h2>
+<div class="pricing-card scroll-reveal">
+<h3 class="scroll-reveal">Ethical Hacking Complete Package</h3>
+<div class="price scroll-reveal">1000 NPR</div>
+<ul class="pricing-features">
+<li>Full video lessons for all modules</li>
+<li>Practical lab exercises &amp; tutorials</li>
+<li>Direct WhatsApp support</li>
+<li>Certification upon completion</li>
+<li>Lifetime access to materials</li>
+</ul>
+<a class="btn" href="whatsapp://send?phone=+9779847699795&amp;text=Hi%2C%20I%20want%20to%20join%20the%20Ethical%20Hacking%20Course%20for%201000%20NPR.%20Please%20send%20me%20the%20details.">
+                    📲 Buy Now on WhatsApp
+                </a>
+</div>
+</div>
+<div class="scroll-down-indicator">
+  <span class="arrow">▼</span>
+</div>
+
+</section>
+<div class="modal scroll-reveal" id="gateway-modal" style="display: block;"> <div class="modal-content scroll-reveal">
+<span class="close-modal" id="close-modal">×</span>
+<h2 class="scroll-reveal">Enter the Hacker World</h2>
+<p class="scroll-reveal">Submit your information to gain access to our hacker network.</p>
+<div class="terminal-form scroll-reveal">
+<div class="input-group scroll-reveal">
+<label for="name">Enter your code name:</label>
+<input class="input-field" id="name" placeholder="Code Name" type="text"/>
+</div>
+<div class="input-group scroll-reveal">
+<label for="phone">Enter your phone number:</label>
+<input class="input-field" id="phone" placeholder="Phone Number" type="tel"/>
+</div>
+<div class="input-group scroll-reveal">
+<label for="location">Enter your location:</label>
+<input class="input-field" id="location" placeholder="City or Province" type="text"/>
+</div>
+<button class="btn" id="gateway-submit">
+                    &gt;&gt; Access Hacker Network
+                </button>
+</div>
+</div>
+</div>
+<footer>
+<div class="container scroll-reveal">
+<div class="footer-content scroll-reveal">
+                ╔═════════════════════════════╗<br/>
+                ║   HackFast Academy          ║<br/>
+                ║   Ethical Hacking | Legal   ║<br/>
+                ║   WhatsApp Support Only     ║<br/>
+                ╚═════════════════════════════╝
+            </div>
+<div class="disclaimer scroll-reveal">
+                All training provided is for educational purposes only. By enrolling, you agree to use the knowledge ethically and legally.
+            </div>
+</div>
+</footer>
+<script>
+        // Matrix Code Rain Effect
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Setting up the characters
+        const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        const charArray = characters.split('');
+
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#00FF00"; // Green text
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        // Responsive Menu
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Gateway Modal
+        // const gatewayBtn = document.getElementById('gateway-btn'); // This ID doesn't exist in the HTML, can be removed
+        const gatewayModal = document.getElementById('gateway-modal');
+        const closeModal = document.getElementById('close-modal');
+        const gatewaySubmit = document.getElementById('gateway-submit');
+
+        // Removed gatewayBtn event listener as the element with ID 'gateway-btn' is not present
+
+        closeModal.addEventListener('click', () => {
+            gatewayModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === gatewayModal) {
+                gatewayModal.style.display = 'none';
+            }
+        });
+
+        // MODIFIED BEHAVIOR for gatewaySubmit button:
+        gatewaySubmit.addEventListener('click', () => {
+            // const name = document.getElementById('name').value; // No longer needed for this action
+            // const phone = document.getElementById('phone').value; // No longer needed for this action
+            // const location = document.getElementById('location').value; // No longer needed for this action
+
+            // const message = `Hi, I want to join the Ethical Hacking Course for 1000 NPR. My name is ${name}, I am located in ${location}. Please send me the details.`; // No longer needed
+            // const whatsappLink = `whatsapp://send?phone=+9779847699795&text=${encodeURIComponent(message)}`; // No longer needed
+
+            // window.location.href = whatsappLink; // Removed WhatsApp redirection
+
+            // New behavior: Simply close the modal
+            gatewayModal.style.display = 'none';
+        });
+
+        // Resize event for canvas
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            // Recalculate columns for matrix effect if needed, though current effect might adapt okay
+            // columns = canvas.width / fontSize; // Optional: reset columns
+            // for (let i = 0; i < columns; i++) { // Optional: reset drops if columns change significantly
+            //     if(drops[i] === undefined) drops[i] = 1;
+            // }
+        });
+    </script>
+
+<!-- Scroll Reveal Script -->
+<script>
+  const revealElements = document.querySelectorAll('.scroll-reveal');
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < windowHeight - 100) {
+        el.classList.add('revealed');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+<!-- Matrix Rain Background -->
+<canvas id="matrixCanvas"></canvas>
+<script>
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  let chars = "01";
+  chars = chars.split("");
+
+  let font_size = 14;
+  let columns = canvas.width / font_size;
+  let drops = [];
+  for (let x = 0; x < columns; x++) drops[x] = 1;
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0F0";
+    ctx.font = font_size + "px monospace";
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+      if (drops[i] * font_size > canvas.height && Math.random() > 0.975)
+        drops[i] = 0;
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 33);
+
+  window.addEventListener('resize', () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    columns = canvas.width / font_size;
+    drops = [];
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  new Typed('#typed', {
+    strings: [
+      'Learn to ethically break into systems — and protect them.',
+      'Fast, practical, and beginner-friendly.',
+      'Real-world tools. Real hacker mindset.'
+    ],
+    typeSpeed: 55,
+    backSpeed: 25,
+    backDelay: 3000,
+    startDelay: 500,
+    loop: true,
+    showCursor: true,
+    cursorChar: '_'
+  });
+</script>
+
+</body>
+</html>
